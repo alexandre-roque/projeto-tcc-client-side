@@ -12,19 +12,11 @@ export interface ProductType {
 export default function ClientPage() {
 	const searchParams = new URLSearchParams(window.location.search);
 
-	const search = searchParams.get('limit') ?? 20;
+	const search = searchParams.get('limit') ?? 10;
 	const [products, setProducts] = useState<ProductType[]>([]);
 
 	useEffect(() => {
-		fetch('https://projeto-tcc-server.vercel.app/api/products', {
-			method: 'POST',
-			headers: {
-				Accept: 'application/json',
-			},
-			body: JSON.stringify({
-				limit: search,
-			}),
-		})
+		fetch(`https://projeto-tcc-server.vercel.app/api/products-client?limit=${search}`)
 			.then((res) => res.json())
 			.then((data) => {
 				setProducts(data.products);

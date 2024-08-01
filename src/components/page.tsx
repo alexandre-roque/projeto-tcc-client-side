@@ -16,7 +16,7 @@ export default function ClientPage() {
 	const [products, setProducts] = useState<ProductType[]>([]);
 
 	useEffect(() => {
-		fetch('https://projeto-tcc-rose.vercel.app/api/products', {
+		fetch('https://projeto-tcc-server.vercel.app/api/products', {
 			method: 'POST',
 			headers: {
 				Accept: 'application/json',

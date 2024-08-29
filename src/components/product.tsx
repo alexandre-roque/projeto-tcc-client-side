@@ -13,7 +13,7 @@ export default function Product({ product }: { product: ProductType }) {
 			<div className='p-2 flex justify-between bg-gray-800 rounded-b-lg min-h-24'>
 				<div>
 					<h3 className='text-sm text-gray-200 line-clamp-1'>
-						<a href='#'>
+						<a href={`https://projeto-tcc-server.vercel.app/products/${product.id}`}>
 							<span aria-hidden='true' className='absolute inset-0' />
 							{product.name}
 						</a>
